@@ -1,13 +1,15 @@
-import React, {useEffect} from 'react';
-import { fetchUsers } from './api';
+import React, {useEffect, useState} from 'react';
+import { fetchEmployees } from './api';
 import Table from './components/Table';
 
 function App() {
+  const [employees, setEmployees] = useState([])
   useEffect(() => {
-    fetchUsers()
+    fetchEmployees().then((empList) => setEmployees(empList))
   }, []);
+
   return (
-   <Table />
+   <Table employees={employees}/>
   );
 }
 
