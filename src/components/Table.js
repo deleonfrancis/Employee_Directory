@@ -1,6 +1,16 @@
 import React, { useEffect } from "react";
+import Employee from "./Employee";
 
-export default function Table({employees}) {
-  useEffect(() => {}, []);
-  return <div><pre>{JSON.stringify(employees, null, 2)}</pre></div>;
+export default function Table({ employees }) {
+  return (
+    <div>
+      <table>
+        {employees.map((employee) => (
+          <Employee employee={employee} key={employee.guid} />
+        ))}
+      </table>
+    </div>
+  );
 }
+
+
