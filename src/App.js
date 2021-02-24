@@ -12,7 +12,9 @@ function App() {
     });
   }, []);
 
-  return <Table employees={employees} />;
+  return (
+      <Table employees={employees} />
+  );
 }
 
 export default App;
