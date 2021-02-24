@@ -1,11 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import { fetchUsers } from './api';
+import Table from './components/Table';
 
 function App() {
+  useEffect(() => {
+    fetchUsers()
+  }, []);
   return (
-    <div>
-    <h1>Hey Finally</h1>
-    Do you believe now?!
-    </div>
+   <Table />
   );
 }
 
