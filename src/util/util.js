@@ -31,9 +31,9 @@ function sortData(employeeList, sortBy) {
 function filterData(employeeList, filterBy) {
   return employeeList.filter((employee) => {
     return (
-      employee.name === filterBy ||
-      employee.email === filterBy ||
-      employee.phone === filterBy
+      employee.name.includes(filterBy) ||
+      employee.email.includes(filterBy) ||
+      employee.phone.includes(filterBy)
     );
   });
 }
