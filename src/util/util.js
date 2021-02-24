@@ -12,4 +12,30 @@ function mapData(employeeList) {
   });
 }
 
-export { mapData };
+function sortData(employeeList, sortBy) {
+  return employeeList.sort((a, b) => {
+    const propertyA = a[sortBy].toUpperCase();
+    const propertyB = b[sortBy].toUpperCase();
+    if (propertyA < propertyB) {
+      return -1;
+    }
+    if (propertyA > propertyB) {
+      return 1;
+    }
+
+    // names must be equal
+    return 0;
+  });
+}
+
+function filterData(employeeList, filterBy) {
+  return employeeList.filter((employee) => {
+    return (
+      employee.name === filterBy ||
+      employee.email === filterBy ||
+      employee.phone === filterBy
+    );
+  });
+}
+
+export { mapData, sortData, filterData };
