@@ -5,23 +5,23 @@ export default function TableHeader({ onClick }) {
   return (
     <thead>
       <tr>
-        <th>
-          <SortButton text="Picture" onClick={() => {}} />
+        <th className="pl-2">
+          <SortButton text="" onClick={() => {}} />
         </th>
-        <th>
+        <th className="pl-2">
           <SortButton
             text="First Name"
             sortField="firstName"
             onClick={onClick}
           />
         </th>
-        <th>
+        <th className="pl-2">
           <SortButton text="Last Name" sortField="lastName" onClick={onClick} />
         </th>
-        <th>
+        <th className="pl-2">
           <SortButton text="Email" sortField="email" onClick={onClick} />
         </th>
-        <th>
+        <th className="pl-2">
           <SortButton text="Phone Number" sortField="phone" onClick={onClick} />
         </th>
       </tr>

@@ -1,14 +1,20 @@
 import React from "react";
+import Modal from "./Modal";
+
 
 export default function Employee({ employee }) {
+
   return (
     <tr>
       <td className="align-middle">
-        <img
-          src={employee.picture}
-          alt={`${employee.firstName} img`}
-          className="img-thumbnail rounded-circle"
-        />
+        <button type="button" class="btn btn-outline" data-toggle="modal" data-target="#exampleModalCenter">
+          <img
+            src={employee.picture}
+            alt={`${employee.firstName} img`}
+            className="img-thumbnail rounded-circle"
+          />
+        </button>
+        <Modal />
       </td>
 
       <td className="align-middle">{employee.firstName}</td>
