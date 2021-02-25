@@ -4,7 +4,8 @@ function mapData(employeeList) {
   return employeeList.map((employee) => {
     return {
       guid: uuidv4(),
-      name: `${employee.name.first} ${employee.name.last}`,
+      firstName: employee.name.first,
+      lastName: employee.name.last,
       email: employee.email,
       phone: employee.phone,
       picture: employee.picture.thumbnail,
@@ -14,8 +15,29 @@ function mapData(employeeList) {
 
 function sortData(employeeList, sortBy) {
   return employeeList.sort((a, b) => {
-    const propertyA = a[sortBy].toUpperCase();
-    const propertyB = b[sortBy].toUpperCase();
+    let propertyA;
+    let propertyB;
+    if (sortBy === "phone") {
+      const phoneNumberOne = a[sortBy];
+      const phoneNumberTwo = b[sortBy];
+      if (isNaN(phoneNumberOne[0])) {
+        propertyA = phoneNumberOne.slice(1);
+      }
+      if (isNaN(phoneNumberTwo[0])) {
+        propertyB = phoneNumberTwo.slice(1);
+      }
+      // if (propertyA < propertyB) {
+      //   return -1;
+      // }
+      // if (propertyA > propertyB) {
+      //   return 1;
+      // }
+
+      // names must be equal
+      // return 0;
+    }
+    propertyA = a[sortBy].toUpperCase();
+    propertyB = b[sortBy].toUpperCase();
     if (propertyA < propertyB) {
       return -1;
     }
@@ -31,7 +53,8 @@ function sortData(employeeList, sortBy) {
 function filterData(employeeList, filterBy) {
   return employeeList.filter((employee) => {
     return (
-      employee.name.includes(filterBy) ||
+      employee.firstName.includes(filterBy) ||
+      employee.lastName.includes(filterBy) ||
       employee.email.includes(filterBy) ||
       employee.phone.includes(filterBy)
     );

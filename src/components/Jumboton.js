@@ -1,17 +1,17 @@
 import React from "react";
-import SortBtn from "./SortBtn";
+import Filter from "./Filter";
 
-export default function Jumboton() {
+export default function Jumboton({onFilterClick, onClearClick}) {
   return (
-    <div class="jumbotron jumbotron-fluid">
-      <div class="container">
-        <h1 class="display-4">Employee Directory</h1>
-        <p class="lead">
+    <div className="jumbotron jumbotron-fluid">
+      <div className="container">
+        <h1 className="display-4">Employee Directory</h1>
+        <p className="lead">
           This is a modified jumbotron that occupies the entire horizontal space
           of its parent.
         </p>
-        <SortBtn />
       </div>
+      <Filter onFilterClick={onFilterClick} onClearClick={onClearClick} />
     </div>
   );
 }

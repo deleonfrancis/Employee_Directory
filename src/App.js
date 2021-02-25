@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { fetchEmployees } from "./api";
 import Table from "./components/Table";
+import { fetchEmployees } from "./api";
 import { mapData } from "./util/util";
 
 function App() {
@@ -11,6 +11,11 @@ function App() {
       setEmployees(mappedEmpList);
     });
   }, []);
+
+  if(employees.length === 0){
+    return null;
+  }
+
 
   return (
       <Table employees={employees} />
