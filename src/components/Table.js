@@ -30,14 +30,16 @@ export default function Table({ employees }) {
   return (
     <div>
       <Jumbotron onFilterClick={onFilterClick} onClearClick={onClearClick} />
-      <table className="table">
-        <TableHeader onClick={sortEmployeesClick} />
-        <tbody>
-          {employeeList.map((employee) => (
-            <Employee employee={employee} key={employee.guid} />
-          ))}
-        </tbody>
-      </table>
+      <main className="d-flex justify-content-center">
+        <table className="table table-striped shadow-lg col-xl-7 col-lg-8 col-md-10 col-sm-12">
+          <TableHeader onClick={sortEmployeesClick} />
+          <tbody>
+            {employeeList.map((employee) => (
+              <Employee employee={employee} key={employee.guid} />
+            ))}
+          </tbody>
+        </table>
+      </main>
     </div>
   );
 }
