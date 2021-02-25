@@ -1,13 +1,15 @@
-import axios from "axios";
+import axios from "axios"; //imports axios
 
+// Function that gets the data from the randomuser api.
 function fetchEmployees() {
   return axios
-    .get("https://randomuser.me/api/?results=20")
-    .then((response) => response.data.results)
+    .get("https://randomuser.me/api/?results=20") //Limits to 20 employee returns
+    .then((response) => response.data.results) //Returns the results section of the api which contains the users
     .catch((error) => {
       // handle error
       console.log(error);
     });
 }
 
+// Exports fetchEmployees
 export { fetchEmployees };
