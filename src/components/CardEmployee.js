@@ -3,7 +3,7 @@ import React from "react";
 export default function CardEmployee({employee}) {
     console.log(employee);
   return (
-    <div className="card mb-4" style={{width: "18rem"}}>
+    <div className="card mb-4 col-md-6 col-sm-12" style={{width: "18rem"}}>
       <img className="card-img-top" src={employee.lgPicture} alt={`${employee.firstName} pic`} />
       <div className="card-body">
         <h5 className="card-title">{`${employee.firstName} ${employee.lastName}`}</h5>

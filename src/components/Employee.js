@@ -5,7 +5,7 @@ import React from "react";
 export default function Employee({ employee }) {
   return (
     <div className="row">
-      <div className="col">
+      <div className="col-lg-2">
         <button
           type="button"
           className="btn btn-outline"
@@ -19,10 +19,10 @@ export default function Employee({ employee }) {
           />
         </button>
       </div>
-      <div className="col center-text p-0">{employee.firstName}</div>
-      <div className="col center-text p-0">{employee.lastName}</div>
-      <div className="col center-text p-0">{employee.email}</div>
-      <div className="col center-text p-0">{employee.phone}</div>
+      <div className="col-lg-2 center-text p-0">{employee.firstName}</div>
+      <div className="col-lg-2 center-text p-0">{employee.lastName}</div>
+      <div className="col-lg-4 center-text p-0">{employee.email}</div>
+      <div className="col-lg-2 center-text p-0">{employee.phone}</div>
     </div>
   );
 }
