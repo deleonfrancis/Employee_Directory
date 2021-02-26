@@ -1,4 +1,4 @@
-// Import uuid. used to get a random id.
+// Imports uuidv4. Used to get a random id, that is used to set a key value.
 import { v4 as uuidv4 } from "uuid";
 
 // Function that maps over the data and returns what we need from the data.
@@ -11,6 +11,7 @@ function mapData(employeeList) {
       email: employee.email,
       phone: employee.phone,
       picture: employee.picture.thumbnail,
+      lgPicture: employee.picture.large,
     };
   });
 }
