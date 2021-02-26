@@ -2,3 +2,9 @@
     margin: auto;
     width: 50%;
   }
+
+  .jumbotron{
+    /* background-image: url(https://pixabay.com/get/gd4d118015ff2bd8cc56a04f904cffb3fda918b198929817eb81fd0c2a2e3b0579d3b3d6e900eb94aa2c71554cb07a630.jpg); */
+    padding: 150px;
+    /* color: white; */
+  }

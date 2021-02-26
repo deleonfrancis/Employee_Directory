@@ -6,7 +6,7 @@ export default function Filter({ onClearClick, onFilterClick }) {
 
   return (
     <div className="col-lg-12 d-flex justify-content-center">
-      <div className="input-group mb-3 w-50">
+      <div className="input-group mb-3">
         <input
           onChange={(event) => setSearchValue(event.target.value)}
           value={searchValue}

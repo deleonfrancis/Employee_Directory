@@ -6,7 +6,7 @@ export default function Table({sortEmployeesClick, employeeList}) {
   return (
     <>
       <TableHeader onClick={sortEmployeesClick} />
-      <div class="container">
+      <div class="container shadow-lg">
         {employeeList.map((employee) => (
           <Employee employee={employee} key={employee.guid} />
         ))}
