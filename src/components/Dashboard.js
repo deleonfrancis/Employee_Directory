@@ -12,7 +12,7 @@ export default function Dashboard({ employees }) {
   });
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1224px)" });
 
-  // internal state
+  // set the internal state
   const [employeeList, setEmployeeList] = useState(employees);
 
   // Function that handles sorting

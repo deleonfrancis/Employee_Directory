@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"; // allows us to use the use react useEffect and useState Hooks 
-import Table from "./components/Dashboard"; //imports the table 
+import Dashboard from "./components/Dashboard"; //imports the table 
 import { fetchEmployees } from "./api"; //imports the function that gets the data
 import { mapData } from "./util/util"; //imports the function that maps and returns the data
 import "./assets/css/styles.css"
@@ -25,7 +25,7 @@ function App() {
 
 
   return (
-      <Table employees={employees} /> // passes employees into the Table
+      <Dashboard employees={employees} /> // passes employees into the Table
   );
 }
 

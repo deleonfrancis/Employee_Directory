@@ -4,36 +4,22 @@ import React, { useState } from "react";
 export default function Filter({ onClearClick, onFilterClick }) {
   const [searchValue, setSearchValue] = useState("");
 
+  if (searchValue === ""){
+    onClearClick()
+  } 
+
   return (
-    <div className="col-lg-12 d-flex justify-content-center">
-      <div className="input-group mb-3">
+    <div className="d-flex justify-content-center">
+      <div className="input-group col-lg-8 col-md-10 col-sm-12 mb-3">
         <input
-          onChange={(event) => setSearchValue(event.target.value)}
+          onChange={(event) => {setSearchValue(event.target.value)
+          onFilterClick(searchValue)}}
           value={searchValue}
           type="text"
           className="form-control"
           placeholder="Filter by name, email, or phone number"
           ariaLabel="Filter by name, email, or phone number"
         />
-        <div className="input-group-append">
-          <button
-            onClick={() => {
-              setSearchValue("");
-              onClearClick();
-            }}
-            className="btn btn-outline-danger"
-            type="button"
-          >
-            Clear
-          </button>
-          <button
-            onClick={() => onFilterClick(searchValue)}
-            className="btn btn-outline-primary"
-            type="button"
-          >
-            Filter
-          </button>
-        </div>
       </div>
     </div>
   );
